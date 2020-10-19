@@ -55,8 +55,8 @@
         var map = L.map('map', {
             zoomControl:true, maxZoom:20, minZoom:6
         }).setView([1.211574,-77.277290],14);
-		var wmsLayer = L.tileLayer.wms('http://gw-geoportal-test.igac.gov.co/cartografia100k/service?REQUEST=GetCapabilities&VERSION=1.3.0', {layers:
-        'bosque'}).addTo(map);
+		var wmsLayer = L.tileLayer.wms('http://gw-geoportal-test.igac.gov.co/cartografia100k/service?format=image%2Fpng&layer=laguna&sld_version=1.1.0&request=GetLegendGraphic&service=WMS&version=1.1.1&styles=', {layers:
+        'laguna'}).addTo(map);
 		var wmsLayer = L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
         layers: 'OSM-WMS'
         }).addTo(map);
