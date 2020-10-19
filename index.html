@@ -55,8 +55,8 @@
         var map = L.map('map', {
             zoomControl:true, maxZoom:20, minZoom:6
         }).setView([1.211574,-77.277290],14);
-		var wmsLayer = L.tileLayer.wms('http://sigotws.igac.gov.co:6080/arcgis/services/CARTOGRAFIA_BASE/CARTOGRAFIA_BASE/MapServer/WMSServer?request=GetCapabilities&service=WMS', {layers:
-        'COBERTURA VEGETAL'}).addTo(map);
+		var wmsLayer = L.tileLayer.wms('http://gw-geoportal-test.igac.gov.co/cartografia100k/service?REQUEST=GetCapabilities&VERSION=1.3.0', {layers:
+        'cartografia_100k'}).addTo(map);
 		var marker = L.marker([1.210579, -77.276482]).addTo(map);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
