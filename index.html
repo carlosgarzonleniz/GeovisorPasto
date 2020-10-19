@@ -52,6 +52,8 @@
               });
             }
         }
+		var wmsLayer = L.tileLayer.wms('http://gw-geoportal-test.igac.gov.co/cartografia500k/service?format=image%2Fpng&layer=cartografia_500k&sld_version=1.1.0&request=GetLegendGraphic&service=WMS&version=1.1.1&styles=', {layers:
+        'bosque'}).addTo(map);
         var map = L.map('map', {
             zoomControl:true, maxZoom:20, minZoom:6
         }).setView([1.211574,-77.277290],16);
