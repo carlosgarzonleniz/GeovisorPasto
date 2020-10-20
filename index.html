@@ -608,7 +608,7 @@
 		
 	$.getJSON('data/vulnerabilidad.geojson', function (geojson) {
 	  L.choropleth(geojson, {
-		valueProperty: 'vul',
+		valueProperty: 'TI',
 		scale: ['white', 'red'],
 		steps: 5,
 		mode: 'q',
