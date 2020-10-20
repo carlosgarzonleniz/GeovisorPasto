@@ -43,7 +43,9 @@
         <script src="data/Hacinamientocritico_2.js"></script>
         <script src="data/Vulnerabilidad_3.js"></script>
 		
+		<script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
 		<script src="js/leaflet.geocsv.js"></script>  
+		<script src="js/choropleth.js" ></script> 
 		
         <script>
         var highlightLayer;
@@ -606,6 +608,22 @@
 	 };
 	 csv();
 		
+	$.getJSON('data/vulnerabilidad.geojson', function (geojson) {
+	  L.choropleth(geojson, {
+		valueProperty: 'vul',
+		scale: ['white', 'red'],
+		steps: 5,
+		mode: 'q',
+		style: {
+		  color: '#fff',
+		  weight: 2,
+		  fillOpacity: 0.8
+		},
+		onEachFeature: function (feature, layer) {
+
+		}
+	  }).addTo(map)
+	})
 		
         </script>
     </body>
