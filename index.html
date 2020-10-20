@@ -606,7 +606,7 @@
 	 };
 	 csv();
 		
-	$.getJSON('data/vulnerabilidad.geojson', function (geojson) {
+	 var pastoVul = $.getJSON('data/vulnerabilidad.geojson', function (geojson) {
 	  L.choropleth(geojson, {
 		valueProperty: 'TI',
 		scale: ['white', 'red'],
@@ -622,7 +622,7 @@
 		}
 	  }).addTo(map)
 	})
-		
+		L.control.layers({pastoVul}).addTo(map);
         </script>
     </body>
 </html>
