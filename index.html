@@ -44,6 +44,8 @@
 		<script src="js/leaflet.geocsv.js"></script>  
 		<script src="js/choropleth.js" ></script> 
 		
+		<script src="js/print/dist/bundle.js"></script>
+		
 		
         <script>
         var highlightLayer;
@@ -628,6 +630,18 @@
 		}
 	  }).addTo(map)
 	})
+	
+	var printer = L.easyPrint({
+      		tileLayer: mapabase,
+      		sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
+      		filename: 'myMap',
+      		exportOnly: true,
+      		hideControlContainer: true
+		}).addTo(map);
+
+		function manualPrint () {
+			printer.printMap('CurrentSize', 'MyManualPrint')
+		}
 		
         </script>
     </body>
