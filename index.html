@@ -594,7 +594,7 @@
 		function csv(){
 	  'use strict';
 
-	  $.get('D:\user\Documents\semestre 9\3.3 -sig en web y moviles\qgis2web\data\lugares', function(csvContents) {
+	  $.get('D:/user/Documents/semestre 9/3.3 -sig en web y moviles/qgis2web/data/lugares', function(csvContents) {
 		var geoLayer = L.geoCsv(csvContents, {firstLineTitles: true, fieldSeparator: ';'});
 		map.addLayer(geoLayer);
 	  });
