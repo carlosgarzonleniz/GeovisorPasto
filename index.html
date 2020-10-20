@@ -599,7 +599,7 @@
 		function csv(){
 	  'use strict';
 
-	  $.get('lugares', function(csvContents) {
+	  $.get('data/lugares.csv',function(csvContents){
 		var geoLayer = L.geoCsv(csvContents, {firstLineTitles: true, fieldSeparator: ';'});
 		map.addLayer(geoLayer);
 	  });
