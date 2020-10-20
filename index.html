@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css"> <!--2do cambio-->
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
+	    <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.css" />
         <style>
         html, body, #map {
             width: 100%;
@@ -38,6 +39,8 @@
         <script src="data/Vulnerabilidad_3.js"></script>
 		
 		<script src="js/leaflet.geocsv.js"></script>  <!-- este -->
+	    <script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script> <!-- este -->
+	    <script src="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.js"></script>  <!-- este -->
 		
         <script>
         var highlightLayer;
@@ -593,12 +596,12 @@
 		function csv(){
 	  'use strict';
 
-	  $.get('data/LugaresPastoCSV.csv', function(csvContents) {
+	  $.get('data/lugares.csv', function(csvContents) {
 		var geoLayer = L.geoCsv(csvContents, {firstLineTitles: true, fieldSeparator: ';'});
 		map.addLayer(geoLayer);
 	  });
-	};
-	csv();
+	 };
+	 csv();
 		
 		
         </script>
