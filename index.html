@@ -40,8 +40,8 @@
         <script src="data/Vulnerabilidad_3.js"></script>
 		
 		
-		<script src="leaflet.geocsv.js"></script>  
-		<script src="choropleth.js" ></script> 
+		<script src="data/leaflet.geocsv.js"></script>  
+		<script src="data/choropleth.js" ></script> 
 		
         <script>
         var highlightLayer;
@@ -597,7 +597,7 @@
 		function csv(){
 	  'use strict';
 
-	  $.get('data/lugares1.csv',function(csvContents){
+	  $.get('data/lugares.csv',function(csvContents){
 		var geoLayer = L.geoCsv(csvContents, {firstLineTitles: true, fieldSeparator: ';'});
 		map.addLayer(geoLayer);
 	  });
