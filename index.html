@@ -74,9 +74,7 @@
         }).addTo(map);
 		
 		
-
 		
-		var marker = L.marker([1.210579, -77.276482]).addTo(map);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -603,45 +601,6 @@
         L.control.layers(baseMaps,{'Vulnerabilidad <br /><table><tr><td style="text-align: center;"><img src="legend/Vulnerabilidad_3_alto0.png" /></td><td>alto</td></tr><tr><td style="text-align: center;"><img src="legend/Vulnerabilidad_3_medioalto1.png" /></td><td>medio - alto</td></tr><tr><td style="text-align: center;"><img src="legend/Vulnerabilidad_3_medio2.png" /></td><td>medio</td></tr><tr><td style="text-align: center;"><img src="legend/Vulnerabilidad_3_mediobajo3.png" /></td><td>medio - bajo</td></tr><tr><td style="text-align: center;"><img src="legend/Vulnerabilidad_3_bajo4.png" /></td><td>bajo</td></tr><tr><td style="text-align: center;"><img src="legend/Vulnerabilidad_3_5.png" /></td><td></td></tr></table>': layer_Vulnerabilidad_3,'Hacinamiento critico <br /><table><tr><td style="text-align: center;"><img src="legend/Hacinamientocritico_2_alto0.png" /></td><td>alto</td></tr><tr><td style="text-align: center;"><img src="legend/Hacinamientocritico_2_medio1.png" /></td><td>medio</td></tr><tr><td style="text-align: center;"><img src="legend/Hacinamientocritico_2_bajo2.png" /></td><td>bajo</td></tr><tr><td style="text-align: center;"><img src="legend/Hacinamientocritico_2_3.png" /></td><td></td></tr></table>': layer_Hacinamientocritico_2,'Población mayor de 60 años<br /><table><tr><td style="text-align: center;"><img src="legend/Poblacinmayorde60aos_1_alto0.png" /></td><td>alto</td></tr><tr><td style="text-align: center;"><img src="legend/Poblacinmayorde60aos_1_medio1.png" /></td><td>medio</td></tr><tr><td style="text-align: center;"><img src="legend/Poblacinmayorde60aos_1_bajo2.png" /></td><td>bajo</td></tr><tr><td style="text-align: center;"><img src="legend/Poblacinmayorde60aos_1_3.png" /></td><td></td></tr></table>': layer_Poblacinmayorde60aos_1,'Trabajo informal <br /><table><tr><td style="text-align: center;"><img src="legend/Trabajoinformal_0_alto0.png" /></td><td>alto</td></tr><tr><td style="text-align: center;"><img src="legend/Trabajoinformal_0_medio1.png" /></td><td>medio</td></tr><tr><td style="text-align: center;"><img src="legend/Trabajoinformal_0_bajo2.png" /></td><td>bajo</td></tr><tr><td style="text-align: center;"><img src="legend/Trabajoinformal_0_3.png" /></td><td></td></tr></table>pastovul': layer_Trabajoinformal_0,}).addTo(map);
         setBounds();
 		
-		function csv(){
-	  'use strict';
-
-	  $.get('data/lugares.csv',function(csvContents){
-		var geoLayer = L.geoCsv(csvContents, {firstLineTitles: true, fieldSeparator: ';'});
-		map.addLayer(geoLayer);
-	  });
-	 };
-	 csv();
-		
-	 var pastovul = {};
-	 $.getJSON('data/vulnerabilidad.geojson', function (geojson) {
-	  L.choropleth(geojson, {
-		valueProperty: 'TI',
-		scale: ['white', 'red'],
-		steps: 5,
-		mode: 'q',
-		style: {
-		  color: '#fff',
-		  weight: 2,
-		  fillOpacity: 0.8
-		},
-		onEachFeature: function (feature, layer) {
-
-		}
-	  }).addTo(map)
-	})
-	
-	var printer = L.easyPrint({
-      		
-      		sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
-      		filename: 'myMap',
-      		exportOnly: true,
-      		hideControlContainer: true
-		}).addTo(map);
-
-		function manualPrint () {
-			printer.printMap('CurrentSize', 'MyManualPrint')
-		}
 		
         </script>
     </body>
