@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css"> <!--2do cambio-->
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
+		
+         <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.css" />
+	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.css" />
+	
+		
 
 		
         <style>
@@ -17,7 +22,29 @@
             height: 100%;
             padding: 0;
             margin: 0;
-        }
+			
+			#slidemenu.active{
+	        width:30%;
+	        }
+	        #slidemenu1{
+	        position:relative;
+	        width:0%;
+	        height:100%;
+	        background:White;
+	        right:0%;
+	        top:-100%;
+	        float:right;
+	        transition:all 500ms linear;
+	}
+	
+	#slidemenu1.active{
+	width:30%;
+	}
+			
+		
+        
+		}
+		
         </style>
         <title></title>
     </head>
@@ -46,6 +73,15 @@
 		
 		<script src="js/print/dist/bundle.js"></script>
 		
+		<div id="map" style="z-index:0"></div>
+			<div id="slidemenu" style="z-index:9999">
+			
+				
+		
+					<h1><P ALIGN="CENTER">Vulnerabilidad</p></h1>
+					<canvas id="myDoughnutChart"></canvas><br>
+					<h1><P ALIGN="CENTER">Hacinamiento Critico</p></h1>
+					<canvas id="myDoughnutChart1"></canvas><br>
 		
         <script>
         var highlightLayer;
